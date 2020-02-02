@@ -1,0 +1,29 @@
+{
+  "name": "commandboxjs",
+  "version": "1.0.1",
+  "description": "NPM Package that allows you to run CommandBox",
+  "main": "commandbox.js",
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fyroc@github.com/fyroc/CommandBoxJS.git"
+  },
+  "keywords": [
+    "cfml",
+    "commandbox",
+    "nodejs",
+    "npm"
+  ],
+  "author": "fyroc (Cory Fail)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fyroc/CommandBoxJS/issues"
+  },
+  "homepage": "https://github.com/fyroc/CommandBoxJS#readme",
+  "dependencies": {
+    "download-file": "^0.1.5",
+    "find-java-home": "^1.1.0"
+  }
+}
