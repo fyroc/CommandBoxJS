@@ -2,6 +2,9 @@
 NPM Package that allows you to run CommandBox 
 
 # Installation
+
+Please note, Java is required to be installed on your device for CommandBox to work.
+
 `npm install -s commandboxjs`
 
 # Usage
