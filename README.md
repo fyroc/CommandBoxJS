@@ -31,7 +31,7 @@ box.stop(cfml_path);
 
 ## Configuration
 
-To pass commands into CommandBox just create a `server.json` in the directory where you CFML lives.
+To pass commands into CommandBox just create a `server.json` in the directory where your CFML lives.
 
 https://commandbox.ortusbooks.com/embedded-server/server.json
 
