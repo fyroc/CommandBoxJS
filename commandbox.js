@@ -1,24 +1,17 @@
 'use strict';
 
 const { exec } = require('child_process');
+const path = require('path');
 
-let isWin = process.platform === "win32";
 let pathToModule = __dirname;
 
 // Starts a CommandBox Instance
-module.exports.start = function (path) {
+module.exports.start = function (cfml_path) {
     require('find-java-home')(function(err, home){
         if(err)return console.log(err);
 
-        if (isWin) {
-            var java_path = home + '\\bin\\java';
-            var cfml_path = path;
-            var box_path = pathToModule + '\\jars\\box.jar';
-        } else {
-            var java_path = home + '/bin/java';
-            var cfml_path = path;
-            var box_path = pathToModule + '/jars/box.jar';
-        }
+        var java_path = path.join(home, 'bin', 'java');
+        var box_path = path.join(pathToModule, 'jars', 'box.jar');
 
         var cmd = `cd "${cfml_path}" && "${java_path}" -jar "${box_path}" server start`;
 
@@ -29,19 +22,12 @@ module.exports.start = function (path) {
 }
 
 // Stops CommandBox Instance
-module.exports.stop = function (path) {
+module.exports.stop = function (cfml_path) {
     require('find-java-home')(function(err, home){
         if(err)return console.log(err);
 
-        if (isWin) {
-            var java_path = home + '\\bin\\java';
-            var cfml_path = path;
-            var box_path = pathToModule + '\\jars\\box.jar';
-        } else {
-            var java_path = home + '/bin/java';
-            var cfml_path = path;
-            var box_path = pathToModule + '/jars/box.jar';
-        }
+        var java_path = path.join(home, 'bin', 'java');
+        var box_path = path.join(pathToModule, 'jars', 'box.jar');
 
         var cmd = `cd "${cfml_path}" && "${java_path}" -jar "${box_path}" server stop`;
 
