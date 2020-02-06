@@ -1,11 +1,11 @@
 const download = require('download-file')
 const path = require('path');
 
-let jar_location = "https://s3.amazonaws.com/downloads.ortussolutions.com/ortussolutions/commandbox/4.9.0-alpha/box.jar";
-let pathToDirectory = path.join(__dirname, 'jars');
+let jar_location = "https://s3.amazonaws.com/downloads.ortussolutions.com/ortussolutions/commandbox/5.0.0-RC.1/box.jar";
+let path_to_directory = path.join(__dirname, 'commandbox');
 
 var options = {
-    directory: pathToDirectory
+    directory: path_to_directory
 }
 
 console.log("Please wait while we download the CommandBox JAR.")

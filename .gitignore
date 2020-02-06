@@ -103,4 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-/jars/box.jar
+/commandbox/box.jar
+/commandbox/commandbox.properties
+/commandbox/home/
