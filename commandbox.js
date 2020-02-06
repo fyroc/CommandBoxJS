@@ -25,11 +25,11 @@ function boxExecute(cfml_path, command) {
         if(err)return console.log(err);
 
         var properties_path = path.join(path_to_module, 'commandbox', 'home');
-        var properites_data = `-commandbox_home=${properties_path}`;
+        var properites_data = `-commandbox_home="${properties_path}"`;
 
         var java_path = path.join(home, 'bin', 'java');
         var box_path = path.join(path_to_module, 'commandbox', 'box.jar');
-        var cmd = `cd ${cfml_path} && ${java_path} -jar ${box_path} ${properites_data} ${command}`;
+        var cmd = `cd "${cfml_path}" && "${java_path}" -jar "${box_path}" ${properites_data} ${command}`;
 
         execute(cmd, (output) => {
             console.log(output)
