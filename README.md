@@ -29,6 +29,17 @@ let cfml_path = 'path/to/coldfusion/files';
 box.stop(cfml_path);
 ```
 
+## CommandBox Execute
+This allows you to execute any other command needed. Do not include `box` at the beginning, the command does it for you.
+
+```
+const box = require('commandboxjs');
+
+let cfml_path = 'path/to/coldfusion/files';
+
+box.execute(cfml_path, 'server restart');
+```
+
 ## Configuration
 
 To pass commands into CommandBox just create a `server.json` in the directory where your CFML lives.
