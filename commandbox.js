@@ -5,27 +5,19 @@ const path = require('path');
 
 let path_to_module = __dirname;
 
-// Starts a CommandBox Instance
-module.exports.start = function (cfml_path) {
-    boxExecute(cfml_path, 'server start');
+// CommandBox Command
+module.exports.execute = function (cfml_path, command, properties_path='') {
+    boxExecute(cfml_path, command, properties_path);
 }
 
-// Stops CommandBox Instance
-module.exports.stop = function (cfml_path) {
-    boxExecute(cfml_path, 'server stop');
-}
-
-// Custom CommandBox Commands
-module.exports.execute = function (cfml_path, command) {
-    boxExecute(cfml_path, command);
-}
-
-function boxExecute(cfml_path, command) {
+function boxExecute(cfml_path, command, properties_path='') {
     require('find-java-home')(function(err, home){
         if(err)return console.log(err);
-
-        var properties_path = path.join(path_to_module, 'commandbox', 'home');
-        var properites_data = `-commandbox_home="${properties_path}"`;
+        
+        var properites_data = '';
+        if (properties_path) {
+            properites_data = `-commandbox_home="${properties_path}"`;
+        }
 
         var java_path = path.join(home, 'bin', 'java');
         var box_path = path.join(path_to_module, 'commandbox', 'box.jar');
