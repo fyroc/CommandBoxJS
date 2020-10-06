@@ -1,6 +1,6 @@
 {
   "name": "commandboxjs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "NPM Package that allows you to run CommandBox",
   "main": "commandbox.js",
   "scripts": {
